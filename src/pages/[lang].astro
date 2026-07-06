@@ -1,0 +1,77 @@
+---
+import SectionEducation from "@components/sections/SectionEducation.astro";
+import SectionExperience from "@components/sections/SectionExperience.astro";
+import SectionHeader from "@components/sections/SectionHeader.astro";
+import SectionProjects from "@components/sections/SectionProjects.astro";
+import SectionResume from "@components/sections/SectionResume.astro";
+import SectionSkills from "@components/sections/SectionSkills.astro";
+import Layout from "@layouts/Layout.astro";
+
+import { cv } from "@data/cv";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+
+const data = cv[lang] ?? cv.es;
+---
+
+<Layout>
+  <div class="pdf-page">
+    <SectionHeader data={data} />
+    <div>
+      <div class="page-body_container">
+        <SectionResume data={data} />
+        <SectionProjects data={data} />
+        <SectionExperience data={data} />
+        <SectionEducation data={data} />
+        <SectionSkills data={data} />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .pdf-page {
+      width: 210mm;
+      min-height: 297mm;
+      height: auto;
+      padding: 8mm 10mm;
+      margin: 8mm auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .page-body_container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body {
+        background: none;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      .no-print {
+        display: none;
+      }
+      * {
+        -webkit-print-color-adjust: exact;
+      }
+
+      .pdf-page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</Layout>

@@ -1,0 +1,57 @@
+---
+import CvSubtitle from "@components/CvSubtitle.astro";
+import SpacingLine from "@components/SpacingLine.astro";
+---
+
+<div>
+  <CvSubtitle variant="big">Habilidades</CvSubtitle>
+  <div class="skills-container">
+    <div class="skills-column">
+      <div>
+        <CvSubtitle variant="medium">Lenguajes de Programación</CvSubtitle>
+        <div>Python (Avanzado), Java (Básico), JavaScript (Básico)</div>
+      </div>
+      <SpacingLine />
+      <div>
+        <CvSubtitle variant="medium">
+          Frameworks y Tecnologías - Backend
+        </CvSubtitle>
+        <div>
+          Django, Flask, FastAPI, SQLAlchemy, Jupyter, WebSockets, Pandas,
+          Numpy, Matplotlib, Seaborn, Scikit-learn
+        </div>
+      </div>
+      <SpacingLine />
+      <div>
+        <CvSubtitle variant="medium">DevOps e Infraestructura</CvSubtitle>
+        <div>
+          AWS (EC2, RDS), Docker, Terraform (en aprendizaje), Git, GitHub
+        </div>
+      </div>
+    </div>
+    <div class="skills-column">
+      <div>
+        <CvSubtitle variant="medium">
+          Frameworks y Tecnologías - Frontend
+        </CvSubtitle>
+        <div>React, Astro, HTML5, CSS3, Typescript, Django</div>
+      </div>
+      <SpacingLine />
+      <div>
+        <CvSubtitle variant="medium">Metodologías y Arquitectura </CvSubtitle>
+        <div>
+          APIs REST, WebSockets, Arquitectura cliente-servidor, CI/CD básico,
+          Testing, Arquitectura modular
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5mm;
+  }
+</style>

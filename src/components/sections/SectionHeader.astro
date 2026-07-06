@@ -1,0 +1,79 @@
+---
+import type { CvData } from "@data/cv";
+
+export interface Props {
+  data: CvData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="section-header">
+  <div class="header-name">John Frederick Knight Berra</div>
+  <div class="header-role">
+    <span>{data.role}</span>
+  </div>
+  <div class="header-contact">
+    <span>+(52) 782-100-5843</span>
+    <span class="sep">|</span>
+    <a href="mailto:valkaefk@gmail.com">valkaefk@gmail.com</a>
+    <span class="sep">|</span>
+    <a href="https://www.linkedin.com/in/johnfrederickknight">
+      linkedin.com/in/johnfrederickknight
+    </a>
+    <span class="sep">|</span>
+    <a href="https://www.github.com/FrederickKnight">
+      github.com/FrederickKnight
+    </a>
+    <span class="sep">|</span>
+    <span>Mérida, Yucatán, México</span>
+  </div>
+</div>
+
+<style>
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2mm;
+    gap: 3px;
+  }
+
+  .header-name {
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  .header-role {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14pt;
+    font-weight: 600;
+    color: #3766cd;
+  }
+
+  .header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3px 10px;
+    font-size: 10pt;
+    color: #444;
+    margin-top: 3px;
+  }
+
+  .header-contact a {
+    color: #111;
+    text-decoration: none;
+  }
+
+  .sep {
+    color: #ccc;
+  }
+</style>

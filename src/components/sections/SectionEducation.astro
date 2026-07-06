@@ -1,0 +1,36 @@
+---
+import CvSubtitle from "@components/CvSubtitle.astro";
+
+import type { CvData } from "@data/cv";
+
+export interface Props {
+  data: CvData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="section-education">
+  <CvSubtitle variant="big">{data.sections.education}</CvSubtitle>
+  <div class="flex-row space-between">
+    <CvSubtitle variant="medium">
+      {data.education.degree}
+    </CvSubtitle>
+    <div>{data.education.date}</div>
+  </div>
+  <div>{data.education.school}</div>
+</div>
+
+<style>
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+  .section-education {
+    margin-bottom: 3mm;
+  }
+</style>

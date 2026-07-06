@@ -1,0 +1,26 @@
+<ul class="cv-list-block">
+  <slot />
+</ul>
+
+<style>
+  .cv-list-block {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+  }
+
+  .cv-list-block :global(li) {
+    font-size: 11pt;
+    color: rgb(38, 37, 37);
+    line-height: 1.55;
+    position: relative;
+  }
+
+  .cv-list-block :global(li)::before {
+    content: "•";
+    position: absolute;
+    left: -10px;
+    color: #111;
+  }
+</style>

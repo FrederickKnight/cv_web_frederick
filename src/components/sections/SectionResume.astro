@@ -1,0 +1,19 @@
+---
+import CvSubtitle from "@components/CvSubtitle.astro";
+import CvTextBlock from "@components/CvTextBlock.astro";
+
+import type { CvData } from "@data/cv";
+
+export interface Props {
+  data: CvData;
+}
+
+const { data } = Astro.props;
+---
+
+<div>
+  <CvSubtitle variant="big">{data.sections.summary}</CvSubtitle>
+  <CvTextBlock>
+    {data.summary}
+  </CvTextBlock>
+</div>

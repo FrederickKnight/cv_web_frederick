@@ -1,0 +1,26 @@
+---
+import CvSubtitle from "@components/CvSubtitle.astro";
+
+import ProjectCard from "@components/ProjectCard.astro";
+import type { CvData } from "@data/cv";
+
+export interface Props {
+  data: CvData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="projects">
+  <CvSubtitle variant="big">{data.sections.projects}</CvSubtitle>
+
+  {data.projects.map((project) => <ProjectCard project_data={project} />)}
+</div>
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+  }
+  </style>

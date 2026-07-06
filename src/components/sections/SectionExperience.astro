@@ -1,0 +1,18 @@
+---
+import CvListBlock from "@components/CvListBlock.astro";
+import CvSubtitle from "@components/CvSubtitle.astro";
+import ExperienceCard from "@components/ExperienceCard.astro";
+
+import type { CvData } from "@data/cv";
+
+export interface Props {
+  data: CvData;
+}
+
+const { data } = Astro.props;
+---
+
+<div>
+  <CvSubtitle variant="big">{data.sections.experience}</CvSubtitle>
+  {data.experience.map((exp) => <ExperienceCard experience_data={exp} />)}
+</div>

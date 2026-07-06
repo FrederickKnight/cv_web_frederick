@@ -1,0 +1,72 @@
+---
+import CvSubtitle from "@components/CvSubtitle.astro";
+import CvTextBlock from "@components/CvTextBlock.astro";
+import SpacingLine from "@components/SpacingLine.astro";
+---
+
+<div class="projects-stack">
+  <CvSubtitle variant="big"> Proyectos </CvSubtitle>
+  <div class="projects-column">
+    <div class="project-card">
+      <CvSubtitle variant="medium">
+        Sistema de Gestión para Bestiario Sushi - Flask / React Native / Docker
+        / AWS
+      </CvSubtitle>
+      <CvTextBlock>
+        Sistema completo de gestión de pedidos y tickets para restaurante,
+        actualmente en producción. Aplicación mobil desarrollada en React para
+        el frontend, consumiendo una API REST en Flask (migración a FastAPI en
+        progreso) con PostgreSQL como base de datos. Implementa autenticación y
+        autorización basada en roles, creación y seguimiento de tickets en
+        tiempo real, y sistema de impresión automática.
+      </CvTextBlock>
+      <CvTextBlock>
+        <span>Infraestructura y Arquitectura:</span> Desplegado en AWS utilizando
+        EC2 para la API con Docker como runtime de contenedores, y RDS para la base
+        de datos PostgreSQL. Sistema de comunicación en tiempo real mediante WebSockets
+        que conecta la API con un cliente desktop desarrollado en Tkinter, funcionando
+        como servicio de impresión que recibe y procesa las órdenes automáticamente.
+      </CvTextBlock>
+    </div>
+    <SpacingLine />
+    <div class="project-card">
+      <CvSubtitle variant="medium">
+        API Chat - Flask / SQLAlchemy / WebSockets / AI
+      </CvSubtitle>
+      <CvTextBlock>
+        Desarrollo de una API modular con Flask y SQLAlchemy para habilitar
+        conversaciones inteligentes mediante WebSockets e integración de IA
+        conversacional (Gemini AI). Implementé autenticación de usuarios, manejo
+        de eventos en tiempo real y arquitectura escalable basada en herencia.
+      </CvTextBlock>
+    </div>
+    <SpacingLine />
+    <div class="project-card">
+      <CvSubtitle variant="medium"> Web Chat - Astro / React</CvSubtitle>
+      <CvTextBlock>
+        Diseño e implementación de una aplicación web con React y Astro para
+        interactuar con la API-Chat en tiempo real. Integración con API REST y
+        WebSockets. Proyecto orientado a comunicación cliente-servidor.
+      </CvTextBlock>
+    </div>
+  </div>
+</div>
+
+<style>
+  span {
+    font-weight: 600;
+  }
+
+  .projects-stack {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+  }
+</style>

@@ -1,0 +1,194 @@
+<style>
+  :root {
+    --accent: #1a56db;
+    --accent-light: #eff6ff;
+    --accent-border: #bfdbfe;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --green-border: #86efac;
+    --text: #111;
+    --text-muted: #555;
+    --text-light: #888;
+    --border: #e5e7eb;
+    --font-body: 'DM Sans', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  .cv-wrapper { font-family: var(--font-body); color: var(--text); background: #f3f4f6; padding: 32px 16px; }
+  .cv-page { background: #fff; max-width: 794px; margin: 0 auto; padding: 36px 44px; box-shadow: 0 4px 32px rgba(0,0,0,0.10); }
+  .cv-header { border-bottom: 2px solid var(--text); padding-bottom: 14px; margin-bottom: 22px; }
+  .cv-header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  .cv-header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
+  .cv-title { font-size: 13px; font-weight: 500; color: var(--accent); margin-top: 3px; }
+  .cv-contact { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; font-size: 11.5px; color: var(--text-muted); font-family: var(--font-mono); }
+  .cv-contact a { color: var(--accent); text-decoration: none; }
+  .cv-body { display: grid; grid-template-columns: 1fr 260px; gap: 0 32px; }
+  .cv-section { margin-bottom: 22px; }
+  .cv-section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1.5px solid var(--text); padding-bottom: 5px; margin-bottom: 14px; }
+  .cv-summary { font-size: 12.5px; color: #333; line-height: 1.6; }
+  .cv-project { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .cv-project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .cv-proj-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 3px; }
+  .cv-proj-name { font-size: 12.5px; font-weight: 700; }
+  .cv-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+  .cv-badge { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px; letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap; }
+  .cv-badge-green { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+  .cv-badge-blue  { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); }
+  .cv-proj-stack { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent); font-weight: 600; margin-bottom: 7px; }
+  .cv-proj-bullets { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .cv-proj-bullets li { font-size: 12px; color: #333; line-height: 1.5; display: flex; gap: 7px; }
+  .cv-proj-bullets li::before { content: 'to'; color: var(--accent); flex-shrink: 0; font-size: 11px; margin-top: 1px; }
+  .cv-proj-link { font-family: var(--font-mono); font-size: 10px; color: var(--text-light); margin-top: 6px; }
+  .cv-proj-link a { color: var(--accent); text-decoration: none; }
+  .cv-skill-group { margin-bottom: 11px; }
+  .cv-skill-group:last-child { margin-bottom: 0; }
+  .cv-skill-cat { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .cv-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .cv-tag { font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 500; border: 1px solid; }
+  .cv-tag-primary { background: var(--accent-light); color: var(--accent); border-color: var(--accent-border); }
+  .cv-tag-muted   { background: #f5f5f5; color: var(--text-muted); border-color: #ddd; }
+  .cv-exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; }
+  .cv-exp-role { font-size: 12.5px; font-weight: 700; }
+  .cv-exp-date { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-light); }
+  .cv-exp-company { font-size: 11.5px; color: var(--accent); font-weight: 500; margin: 2px 0 6px; }
+  .cv-exp-desc { font-size: 12px; color: #444; line-height: 1.5; }
+  .cv-edu-degree { font-size: 12px; font-weight: 600; }
+  .cv-edu-school { font-size: 11.5px; color: var(--accent); margin: 2px 0; }
+  .cv-edu-date { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-light); }
+  .cv-print-btn { max-width: 794px; margin: 0 auto 16px; text-align: right; }
+  .cv-print-btn button { font-family: var(--font-mono); font-size: 11px; background: var(--accent); color: #fff; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; }
+  .cv-print-btn button:hover { background: #1648c0; }
+  @media print {
+    .cv-wrapper { background: #fff; padding: 0; }
+    .cv-page { box-shadow: none; padding: 0; max-width: 100%; }
+    .cv-print-btn { display: none; }
+    a { color: var(--accent) !important; text-decoration: none; }
+    .cv-project, .cv-section { page-break-inside: avoid; }
+  }
+  @page { size: A4; margin: 16mm 20mm; }
+</style>
+
+
+<div class="cv-wrapper">
+  <div class="cv-print-btn">
+    <button onclick="window.print()">Exportar PDF</button>
+  </div>
+  <div class="cv-page">
+    <header class="cv-header">
+      <div class="cv-header-top">
+        <div>
+          <h1>Jane Doe</h1>
+          <div class="cv-title">Backend Developer · DevOps</div>
+        </div>
+        <div class="cv-contact">
+          <span>+52 999 000 0000</span>
+          <a href="mailto:jane@example.com">jane@example.com</a>
+          <a href="https://github.com/janedoe">github.com/janedoe</a>
+          <span>Ciudad de México, MX</span>
+        </div>
+      </div>
+    </header>
+    <div class="cv-body">
+      <div class="cv-left">
+        <section class="cv-section">
+          <div class="cv-section-title">Resumen</div>
+          <p class="cv-summary">
+            Desarrolladora con enfoque en backend y DevOps. Construyo sistemas que llegan a producción, no solo demos.
+            Experiencia práctica desplegando aplicaciones con Flask, Docker y AWS.
+            Busco mi primer rol formal para crecer técnicamente junto a un equipo sólido.
+          </p>
+        </section>
+        <section class="cv-section">
+          <div class="cv-section-title">Proyectos</div>
+          <div class="cv-project">
+            <div class="cv-proj-header">
+              <span class="cv-proj-name">Sistema de Reservas — Café Ejemplo</span>
+              <div class="cv-badges">
+                <span class="cv-badge cv-badge-green">En Producción</span>
+                <span class="cv-badge cv-badge-blue">Freelance</span>
+              </div>
+            </div>
+            <div class="cv-proj-stack">Flask · React · Docker · AWS EC2/RDS · PostgreSQL</div>
+            <ul class="cv-proj-bullets">
+              <li>API REST para gestión de reservas y menú, consumida por app web en React. Actualmente en uso diario.</li>
+              <li>Desplegado en AWS con Docker y RDS. Autenticación por roles (admin / cliente).</li>
+            </ul>
+            <div class="cv-proj-link"><a href="https://github.com/janedoe/cafe-ejemplo">github.com/janedoe/cafe-ejemplo</a></div>
+          </div>
+          <div class="cv-project">
+            <div class="cv-proj-header">
+              <span class="cv-proj-name">CLI de Monitoreo de Servidores</span>
+            </div>
+            <div class="cv-proj-stack">Python · Bash · Docker · GitHub Actions</div>
+            <ul class="cv-proj-bullets">
+              <li>Herramienta de línea de comandos para monitorear métricas y enviar alertas por email.</li>
+              <li>Pipeline CI/CD con GitHub Actions que corre tests automáticos en cada push.</li>
+            </ul>
+            <div class="cv-proj-link"><a href="https://github.com/janedoe/server-monitor">github.com/janedoe/server-monitor</a></div>
+          </div>
+        </section>
+        <section class="cv-section">
+          <div class="cv-section-title">Experiencia</div>
+          <div class="cv-exp-header">
+            <span class="cv-exp-role">Analista de Datos — Práctica Profesional</span>
+            <span class="cv-exp-date">01/2023 – 06/2023</span>
+          </div>
+          <div class="cv-exp-company">Empresa Ejemplo S.A.</div>
+          <p class="cv-exp-desc">Automatización de reportes con Python y Excel. Análisis de bases de datos para área de logística.</p>
+        </section>
+      </div>
+      <div class="cv-right">
+        <section class="cv-section">
+          <div class="cv-section-title">Habilidades</div>
+          <div class="cv-skill-group">
+            <div class="cv-skill-cat">Lenguajes</div>
+            <div class="cv-tags">
+              <span class="cv-tag cv-tag-primary">Python</span>
+              <span class="cv-tag cv-tag-primary">JavaScript</span>
+              <span class="cv-tag cv-tag-muted">Java</span>
+            </div>
+          </div>
+          <div class="cv-skill-group">
+            <div class="cv-skill-cat">Backend</div>
+            <div class="cv-tags">
+              <span class="cv-tag cv-tag-primary">Flask</span>
+              <span class="cv-tag cv-tag-primary">FastAPI</span>
+              <span class="cv-tag cv-tag-primary">SQLAlchemy</span>
+              <span class="cv-tag cv-tag-primary">WebSockets</span>
+            </div>
+          </div>
+          <div class="cv-skill-group">
+            <div class="cv-skill-cat">Frontend</div>
+            <div class="cv-tags">
+              <span class="cv-tag cv-tag-primary">React</span>
+              <span class="cv-tag cv-tag-primary">TypeScript</span>
+              <span class="cv-tag cv-tag-muted">Astro</span>
+            </div>
+          </div>
+          <div class="cv-skill-group">
+            <div class="cv-skill-cat">DevOps</div>
+            <div class="cv-tags">
+              <span class="cv-tag cv-tag-primary">Docker</span>
+              <span class="cv-tag cv-tag-primary">AWS EC2/RDS</span>
+              <span class="cv-tag cv-tag-primary">Git / GitHub</span>
+              <span class="cv-tag cv-tag-muted">Terraform</span>
+            </div>
+          </div>
+          <div class="cv-skill-group">
+            <div class="cv-skill-cat">Arquitectura</div>
+            <div class="cv-tags">
+              <span class="cv-tag cv-tag-primary">REST APIs</span>
+              <span class="cv-tag cv-tag-primary">CI/CD</span>
+              <span class="cv-tag cv-tag-muted">Testing</span>
+            </div>
+          </div>
+        </section>
+        <section class="cv-section">
+          <div class="cv-section-title">Educación</div>
+          <div class="cv-edu-degree">Ing. en Tecnologías Computacionales</div>
+          <div class="cv-edu-school">Universidad Ejemplo</div>
+          <div class="cv-edu-date">2018 – 2023</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
