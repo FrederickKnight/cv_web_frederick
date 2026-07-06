@@ -1,7 +1,5 @@
 // src/data/cv.ts
 
-// src/data/cv.ts
-
 export interface CvData {
   role: string;
   summary: string;
@@ -42,14 +40,11 @@ export interface CvData {
 
 export const cv: Record<string, CvData> = {
   es: {
-    // ── HEADER ──
-    role: "Desarrollador Full Stack - DevOps",
+    role: "Backend Developer - Full Stack - Cloud",
 
-    // ── RESUMEN ──
     summary:
-      "Desarrollador Full Stack y DevOps con experiencia práctica construyendo y desplegando sistemas en producción. Desarrollé como freelance un sistema completo de gestión de pedidos - API REST en Flask, app móvil en React Native e infraestructura en AWS con Docker - actualmente en uso real. Stack principal: Python, Flask, FastAPI, PostgreSQL, Docker, AWS, React.",
+      "Desarrollador Full Stack especializado en backend con Python y despliegue de aplicaciones cloud. Tengo experiencia diseñando e implementando software para producción, desde APIs REST y aplicaciones móviles hasta infraestructura en AWS con Docker. Me enfoco en construir soluciones mantenibles, automatizar procesos y desarrollar software que resuelva problemas reales.",
 
-    // ── SECCIONES ──
     sections: {
       summary: "Resumen",
       projects: "Proyectos",
@@ -58,13 +53,13 @@ export const cv: Record<string, CvData> = {
       skills: "Habilidades",
     },
 
-    // ── PROYECTOS ──
     projects: [
       {
-        name: "Sistema de Gestión de Pedidos - Bestiario Sushi",
+        name: "Sistema de Gestión de Restaurante",
         badges: ["En Producción", "Freelance"],
         stack: [
           "Flask",
+          "FastAPI",
           "React Native",
           "Docker",
           "AWS EC2/RDS",
@@ -73,10 +68,10 @@ export const cv: Record<string, CvData> = {
           "Tkinter",
         ],
         bullets: [
-          "Diseñé y desarrollé API REST en Flask con autenticación y autorización basada en roles para gestión de pedidos en producción.",
-          "Desarrollé app móvil en React Native conectada a la API mediante HTTP para seguimiento de tickets.",
-          "Desplegué infraestructura en AWS EC2 con Docker y base de datos PostgreSQL en RDS.",
-          "Implementé sistema de comunicación en tiempo real vía WebSockets con cliente desktop en Python/Tkinter para impresión automática.",
+          "Diseñé e implementé un sistema POS y una API REST utilizada en producción para centralizar la gestión del restaurante.",
+          "Desarrollé una aplicación móvil en React Native para la administración de mesas, pedidos y tickets.",
+          "Implementé un servicio de impresión automática en tiempo real utilizando WebSockets y Python.",
+          "Desplegué la infraestructura en AWS utilizando Docker, EC2 y PostgreSQL en RDS.",
         ],
       },
       {
@@ -85,7 +80,7 @@ export const cv: Record<string, CvData> = {
         stack: [
           "Python",
           "Flask",
-          "SQLAlchemy", 
+          "SQLAlchemy",
           "Gemini AI",
           "Astro",
           "React",
@@ -94,25 +89,24 @@ export const cv: Record<string, CvData> = {
           "WebSockets",
         ],
         bullets: [
-          "Desarrollé una plataforma de chat en tiempo real con backend en Flask y frontend en Astro/React, integrando Gemini AI para conversaciones.",
-          "Implementé APIs REST, comunicación bidireccional mediante WebSockets, autenticación de usuarios y manejo de sesiones.",
+          "Desarrollé una plataforma de chat en tiempo real con backend en Flask y frontend en Astro y React.",
+          "Integré Gemini AI para conversaciones asistidas mediante APIs REST y WebSockets.",
         ],
       },
     ],
 
-    // ── EXPERIENCIA ──
     experience: [
       {
         role: "Auxiliar de Experiencia Digital",
-        company: "Liverpool Puerto",
+        company: "Puerto de Liverpool",
         location: "Merida, Yucatan",
-        date: "04/2019 - Actual",
+        date: "04/2026 - 07/2026",
         bullets: [
-          "Tecnologías utilizadas: JavaScript, Google Apps Script, AppSheet, REST APIs, Google Sheets y Excel.",
-          "Integré servicios externos mediante consumo de APIs REST.",
-          "Implementé automatizaciones con Google Apps Script (JavaScript)",
-          "Desarrollé mecanismos de autenticación y validación para herramientas de uso interno.",
-          "Desarrollé aplicaciones internas con AppSheet para digitalizar y optimizar procesos operativos.",
+          "Diseñé e implementé automatizaciones con Google Apps Script utilizadas diariamente por el equipo.",
+          "Integré servicios mediante APIs REST para eliminar procesos manuales.",
+          "Desarrollé aplicaciones internas con AppSheet para digitalizar procesos operativos.",
+          "Reduje aproximadamente un 50% los tiempos de captura y procesamiento de información.",
+          "Colaboré con distintas áreas para identificar oportunidades de mejora y automatización.",
         ],
       },
       {
@@ -120,18 +114,18 @@ export const cv: Record<string, CvData> = {
         company: "PEMEX - Petróleos Mexicanos",
         location: "Poza Rica, Veracruz",
         date: "02/2019 - 08/2019",
-        bullets: [],
+        bullets: [
+          "Consulté y analicé bases de datos para la extracción y procesamiento de información operativa relacionada con mantenimiento y confiabilidad.",
+        ],
       },
     ],
 
-    // ── EDUCACIÓN ─
     education: {
       degree: "Licenciatura en Ingeniería en Tecnologías Computacionales",
       school: "Universidad CNCI - México",
-      date: "09/2018 - 12/2023",
+      date: "",
     },
 
-    // ── HABILIDADES ──
     skills: [
       { label: "Lenguajes", values: ["Python", "JavaScript", "Java"] },
       {
@@ -141,8 +135,8 @@ export const cv: Record<string, CvData> = {
           "FastAPI",
           "Django",
           "SQLAlchemy",
+          "REST API",
           "WebSockets",
-          "REST APIs",
         ],
       },
       {
@@ -158,34 +152,23 @@ export const cv: Record<string, CvData> = {
       },
       {
         label: "DevOps",
-        values: [
-          "Docker",
-          "AWS EC2",
-          "AWS RDS",
-          "Git",
-          "GitHub",
-          "CI/CD",
-          "Terraform",
-        ],
+        values: ["Docker", "AWS EC2", "AWS RDS", "Git", "GitHub", "CI/CD"],
       },
       { label: "Base de Datos", values: ["PostgreSQL", "SQLite"] },
     ],
+
     skill_sections: {
       languages: "Lenguajes",
       database: "Base de Datos",
     },
   },
 
-  // ══════════════════════════════════════════
   en: {
-    // ── HEADER ──
-    role: "Full Stack Developer - DevOps",
+    role: "Backend Developer - Full Stack - Cloud",
 
-    // ── SUMMARY ──
     summary:
-      "FullsStack Developer and DevOps with hands-on experience building and deploying systems in production. Built as freelance a complete order management system - REST API in Flask, mobile app in React Native and AWS infrastructure with Docker - currently in real-world daily use. Core stack: Python, Flask, FastAPI, PostgreSQL, Docker, AWS, React. Looking for my first formal role to grow technically within a strong engineering team.",
+      "Full Stack Developer specialized in backend development with Python and cloud application deployment. I have experience designing and implementing production software, from REST APIs and mobile applications to AWS infrastructure with Docker. I focus on building maintainable solutions, automating processes, and developing software that solves real-world problems.",
 
-    // ── SECTIONS ──
     sections: {
       summary: "Summary",
       projects: "Projects",
@@ -194,13 +177,13 @@ export const cv: Record<string, CvData> = {
       skills: "Skills",
     },
 
-    // ── PROJECTS ──
     projects: [
       {
-        name: "Order Management System - Bestiario Sushi",
+        name: "Restaurant Management System",
         badges: ["In Production", "Freelance"],
         stack: [
           "Flask",
+          "FastAPI",
           "React Native",
           "Docker",
           "AWS EC2/RDS",
@@ -209,41 +192,46 @@ export const cv: Record<string, CvData> = {
           "Tkinter",
         ],
         bullets: [
-          "Designed and developed a REST API in Flask with authentication and role-based authorization for order management in production.",
-          "Built a React Native mobile app connected to the API via HTTP ticket tracking.",
-          "Deployed infrastructure on AWS EC2 with Docker and PostgreSQL database on RDS.",
-          "Implemented real-time communication via WebSockets with a Python/Tkinter desktop client for automatic order printing.",
+          "Designed and implemented a production-ready POS system and REST API to centralize restaurant operations.",
+          "Developed a React Native mobile application for table, order, and ticket management.",
+          "Implemented an automatic real-time printing service using WebSockets and Python.",
+          "Deployed the infrastructure on AWS using Docker, EC2, and PostgreSQL on RDS.",
         ],
       },
       {
-        name: "AI Chat API",
+        name: "Conversational AI Chat Platform",
         badges: [],
-        stack: ["Flask", "SQLAlchemy", "WebSockets", "Gemini AI", "Python"],
-        bullets: [
-          "Developed a modular Flask API with SQLAlchemy and Gemini AI integration for intelligent real-time conversations via WebSockets.",
-          "Implemented user authentication, session management and scalable class-based inheritance architecture.",
-          "Designed modular architecture with Python class inheritance for reusable and scalable WebSocket handlers.",
+        stack: [
+          "Python",
+          "Flask",
+          "SQLAlchemy",
+          "Gemini AI",
+          "Astro",
+          "React",
+          "TypeScript",
+          "REST API",
+          "WebSockets",
         ],
-      },
-      {
-        name: "Real-Time Chat Web App",
-        badges: [],
-        stack: ["Astro", "React", "TypeScript", "REST API", "WebSockets"],
         bullets: [
-          "Built frontend in Astro and React consuming REST API and WebSockets in real time with TypeScript.",
-          "Implemented REST API consumption with React state management and bidirectional real-time communication via WebSockets.",
+          "Developed a real-time chat platform with a Flask backend and an Astro and React frontend.",
+          "Integrated Gemini AI through REST APIs and WebSockets for AI-assisted conversations.",
         ],
       },
     ],
 
-    // ── EXPERIENCE ──
     experience: [
       {
-        role: "Auxiliar de Experiencia Digital",
-        company: "Liverpool Puerto",
+        role: "Digital Experience Assistant",
+        company: "Puerto de Liverpool",
         location: "Merida, Yucatan",
-        date: "04/2019 - Actual",
-        bullets: [],
+        date: "04/2026 - 07/2026",
+        bullets: [
+          "Designed and implemented Google Apps Script automations used in daily operations.",
+          "Integrated services through REST APIs to eliminate manual processes.",
+          "Developed internal applications with AppSheet to digitize operational processes.",
+          "Reduced data entry and information processing time by approximately 50%.",
+          "Collaborated with different teams to identify automation and process improvement opportunities.",
+        ],
       },
       {
         role: "Intern - Maintenance and Reliability Management",
@@ -251,19 +239,17 @@ export const cv: Record<string, CvData> = {
         location: "Poza Rica, Veracruz",
         date: "02/2019 - 08/2019",
         bullets: [
-          "Queried and analyzed maintenance databases for extraction and processing of operational data.",
+          "Queried and analyzed maintenance databases to extract and process operational information.",
         ],
       },
     ],
 
-    // ── EDUCATION ──
     education: {
-      degree: "B.S. in Computer Technologies Engineering (Computer Science)",
+      degree: "Bachelor's Degree in Computer Technologies Engineering",
       school: "Universidad CNCI - Mexico",
-      date: "09/2018 - 12/2023",
+      date: "",
     },
 
-    // ── SKILLS ──
     skills: [
       { label: "Languages", values: ["Python", "JavaScript", "Java"] },
       {
@@ -273,8 +259,8 @@ export const cv: Record<string, CvData> = {
           "FastAPI",
           "Django",
           "SQLAlchemy",
+          "REST API",
           "WebSockets",
-          "REST APIs",
         ],
       },
       {
@@ -290,18 +276,11 @@ export const cv: Record<string, CvData> = {
       },
       {
         label: "DevOps",
-        values: [
-          "Docker",
-          "AWS EC2",
-          "AWS RDS",
-          "Git",
-          "GitHub",
-          "CI/CD",
-          "Terraform",
-        ],
+        values: ["Docker", "AWS EC2", "AWS RDS", "Git", "GitHub", "CI/CD"],
       },
       { label: "Database", values: ["PostgreSQL", "SQLite"] },
     ],
+
     skill_sections: {
       languages: "Languages",
       database: "Database",
