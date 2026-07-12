@@ -18,7 +18,7 @@ const { lang } = Astro.params;
 const data = cv[lang] ?? cv.es;
 ---
 
-<Layout>
+<Layout lang={lang}>
   <div class="pdf-page">
     <SectionHeader data={data} />
     <div>
@@ -26,52 +26,52 @@ const data = cv[lang] ?? cv.es;
         <SectionResume data={data} />
         <SectionProjects data={data} />
         <SectionExperience data={data} />
-        <SectionEducation data={data} />
+        <!-- <SectionEducation data={data} /> -->
         <SectionSkills data={data} />
       </div>
     </div>
   </div>
-
-  <style>
-    .pdf-page {
-      width: 210mm;
-      min-height: 297mm;
-      height: auto;
-      padding: 8mm 10mm;
-      margin: 8mm auto;
-      background: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .page-body_container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media print {
-      body {
-        background: none;
-      }
-      a {
-        color: #000;
-        text-decoration: none;
-      }
-      .no-print {
-        display: none;
-      }
-      * {
-        -webkit-print-color-adjust: exact;
-      }
-
-      .pdf-page {
-        margin: 0;
-        box-shadow: none;
-      }
-    }
-
-    @page {
-      size: A4;
-      margin: 0;
-    }
-  </style>
 </Layout>
+
+<style>
+  .pdf-page {
+    width: 210mm;
+    min-height: 297mm;
+    height: auto;
+    padding: 8mm 10mm;
+    margin: 8mm auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .page-body_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body {
+      background: none;
+    }
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+    .no-print {
+      display: none;
+    }
+    * {
+      -webkit-print-color-adjust: exact;
+    }
+
+    .pdf-page {
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>

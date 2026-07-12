@@ -36,15 +36,19 @@ export interface CvData {
     languages: string;
     database: string;
   };
+  menu: {
+    textPortfolioWeb: string;
+  };
 }
 
 export const cv: Record<string, CvData> = {
   es: {
     role: "Backend Developer - Full Stack - Cloud",
 
+    // summary:
+    //   "Desarrollador Full Stack especializado en backend con Python y despliegue de aplicaciones cloud. Tengo experiencia diseñando e implementando software para producción, desde APIs REST y aplicaciones móviles hasta infraestructura en AWS con Docker. Me enfoco en construir soluciones mantenibles, automatizar procesos y desarrollar software que resuelva problemas reales.",
     summary:
-      "Desarrollador Full Stack especializado en backend con Python y despliegue de aplicaciones cloud. Tengo experiencia diseñando e implementando software para producción, desde APIs REST y aplicaciones móviles hasta infraestructura en AWS con Docker. Me enfoco en construir soluciones mantenibles, automatizar procesos y desarrollar software que resuelva problemas reales.",
-
+      "Desarrollador Full Stack con enfoque en backend y diseño de APIs. Tengo experiencia desarrollando software para producción, incluyendo plataformas SaaS, APIs REST, aplicaciones móviles e infraestructura cloud utilizando Docker y PostgreSQL. Disfruto diseñar sistemas mantenibles, crear herramientas para desarrolladores y automatizar procesos mediante soluciones escalables.",
     sections: {
       summary: "Resumen",
       projects: "Proyectos",
@@ -75,24 +79,42 @@ export const cv: Record<string, CvData> = {
         ],
       },
       {
-        name: "Plataforma de Chat con IA Conversacional",
-        badges: [],
+        name: "Plataforma de Feature Flags",
+        badges: ["Proyecto Personal"],
         stack: [
-          "Python",
-          "Flask",
-          "SQLAlchemy",
-          "Gemini AI",
-          "Astro",
-          "React",
+          "NestJS",
           "TypeScript",
-          "REST API",
-          "WebSockets",
+          "Prisma",
+          "PostgreSQL",
+          "Docker",
+          "SDK TypeScript",
         ],
         bullets: [
-          "Desarrollé una plataforma de chat en tiempo real con backend en Flask y frontend en Astro y React.",
-          "Integré Gemini AI para conversaciones asistidas mediante APIs REST y WebSockets.",
+          "Diseñé y desarrollé una API REST para administrar proyectos, feature flags y API keys.",
+          "Implementé autenticación independiente mediante JWT para administradores y API keys para aplicaciones cliente.",
+          "Desarrollé un SDK en TypeScript para simplificar la integración y evaluación de feature flags desde aplicaciones externas.",
+          "Implementé almacenamiento seguro de API keys mediante hashing y soporte para despliegues graduales mediante rollouts porcentuales.",
         ],
       },
+      // {
+      //   name: "Plataforma de Chat con IA Conversacional",
+      //   badges: [],
+      //   stack: [
+      //     "Python",
+      //     "Flask",
+      //     "SQLAlchemy",
+      //     "Gemini AI",
+      //     "Astro",
+      //     "React",
+      //     "TypeScript",
+      //     "REST API",
+      //     "WebSockets",
+      //   ],
+      //   bullets: [
+      //     "Desarrollé una plataforma de chat en tiempo real con backend en Flask y frontend en Astro y React.",
+      //     "Integré Gemini AI para conversaciones asistidas mediante APIs REST y WebSockets.",
+      //   ],
+      // },
     ],
 
     experience: [
@@ -131,11 +153,12 @@ export const cv: Record<string, CvData> = {
       {
         label: "Backend",
         values: [
+          "NestJS",
           "Flask",
           "FastAPI",
-          "Django",
+          "Prisma",
           "SQLAlchemy",
-          "REST API",
+          "REST APIs",
           "WebSockets",
         ],
       },
@@ -152,7 +175,15 @@ export const cv: Record<string, CvData> = {
       },
       {
         label: "DevOps",
-        values: ["Docker", "AWS EC2", "AWS RDS", "Git", "GitHub", "CI/CD"],
+        values: [
+          "Docker",
+          "Docker Compose",
+          "AWS EC2",
+          "AWS RDS",
+          "Git",
+          "GitHub",
+          "CI/CD",
+        ],
       },
       { label: "Base de Datos", values: ["PostgreSQL", "SQLite"] },
     ],
@@ -161,14 +192,18 @@ export const cv: Record<string, CvData> = {
       languages: "Lenguajes",
       database: "Base de Datos",
     },
+    menu: {
+      textPortfolioWeb: "Mi Portfolio Web",
+    },
   },
 
   en: {
     role: "Backend Developer - Full Stack - Cloud",
 
+    // summary:
+    //   "Full Stack Developer specialized in backend development with Python and cloud application deployment. I have experience designing and implementing production software, from REST APIs and mobile applications to AWS infrastructure with Docker. I focus on building maintainable solutions, automating processes, and developing software that solves real-world problems.",
     summary:
-      "Full Stack Developer specialized in backend development with Python and cloud application deployment. I have experience designing and implementing production software, from REST APIs and mobile applications to AWS infrastructure with Docker. I focus on building maintainable solutions, automating processes, and developing software that solves real-world problems.",
-
+      "Full Stack Developer focused on backend engineering and API design. I have experience building production software, including SaaS platforms, REST APIs, mobile applications, and cloud infrastructure using Docker and PostgreSQL. I enjoy designing maintainable systems, building developer tools, and creating scalable solutions.",
     sections: {
       summary: "Summary",
       projects: "Projects",
@@ -199,24 +234,42 @@ export const cv: Record<string, CvData> = {
         ],
       },
       {
-        name: "Conversational AI Chat Platform",
-        badges: [],
+        name: "Feature Flag Platform",
+        badges: ["Personal Project"],
         stack: [
-          "Python",
-          "Flask",
-          "SQLAlchemy",
-          "Gemini AI",
-          "Astro",
-          "React",
+          "NestJS",
           "TypeScript",
-          "REST API",
-          "WebSockets",
+          "Prisma",
+          "PostgreSQL",
+          "Docker",
+          "TypeScript SDK",
         ],
         bullets: [
-          "Developed a real-time chat platform with a Flask backend and an Astro and React frontend.",
-          "Integrated Gemini AI through REST APIs and WebSockets for AI-assisted conversations.",
+          "Designed and developed a REST API to manage projects, feature flags, and API keys.",
+          "Implemented separate authentication flows using JWT for administrators and API keys for client applications.",
+          "Built a TypeScript SDK to simplify feature flag integration and evaluation in external applications.",
+          "Implemented secure API key hashing and support for percentage-based gradual rollouts.",
         ],
       },
+      // {
+      //   name: "Conversational AI Chat Platform",
+      //   badges: [],
+      //   stack: [
+      //     "Python",
+      //     "Flask",
+      //     "SQLAlchemy",
+      //     "Gemini AI",
+      //     "Astro",
+      //     "React",
+      //     "TypeScript",
+      //     "REST API",
+      //     "WebSockets",
+      //   ],
+      //   bullets: [
+      //     "Developed a real-time chat platform with a Flask backend and an Astro and React frontend.",
+      //     "Integrated Gemini AI through REST APIs and WebSockets for AI-assisted conversations.",
+      //   ],
+      // },
     ],
 
     experience: [
@@ -255,11 +308,13 @@ export const cv: Record<string, CvData> = {
       {
         label: "Backend",
         values: [
+          "NestJS",
           "Flask",
           "FastAPI",
           "Django",
+          "Prisma",
           "SQLAlchemy",
-          "REST API",
+          "REST APIs",
           "WebSockets",
         ],
       },
@@ -276,7 +331,15 @@ export const cv: Record<string, CvData> = {
       },
       {
         label: "DevOps",
-        values: ["Docker", "AWS EC2", "AWS RDS", "Git", "GitHub", "CI/CD"],
+        values: [
+          "Docker",
+          "Docker Compose",
+          "AWS EC2",
+          "AWS RDS",
+          "Git",
+          "GitHub",
+          "CI/CD",
+        ],
       },
       { label: "Database", values: ["PostgreSQL", "SQLite"] },
     ],
@@ -284,6 +347,9 @@ export const cv: Record<string, CvData> = {
     skill_sections: {
       languages: "Languages",
       database: "Database",
+    },
+    menu: {
+      textPortfolioWeb: "My Web Portfolio",
     },
   },
 };
